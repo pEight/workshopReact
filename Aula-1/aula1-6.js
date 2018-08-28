@@ -1,3 +1,5 @@
+// typeof() mostra o tipo do valor ou variável que foi passada a ele
+
 console.log(typeof(1));
 // Number
 

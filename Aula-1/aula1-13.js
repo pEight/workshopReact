@@ -1,3 +1,7 @@
+// Uma classe é como uma fábrica de objetos
+// Não se apegue muito a essa sintaxe, em React as coisas são bem diferentes
+// Mas não se preocupe, fica BEEEEEM mais facil ;)
+
 class Retangulo {
     constructor(altura, largura) {
       this.altura = altura;

@@ -7,3 +7,5 @@ console.log(array1);
 
 console.log(array2);
 //["a", "b", "c", "d", "e"]
+
+// Vale lembrar que o operator spread(...) também funciona muito bem com arrays
