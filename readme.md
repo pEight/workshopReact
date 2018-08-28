@@ -7,9 +7,12 @@ Sinta-se livre para alterá-los após o download
 
 Como baixar esse repositório:
 
-mkdir NOMEDAPASTA \n
-cd NOMEDAPASTA \n
-git init \n
+mkdir NOMEDAPASTA
+
+cd NOMEDAPASTA
+
+git init
+
 git clone https://github.com/JsBatista/workshopReact.git
 
 Como executá-los:
