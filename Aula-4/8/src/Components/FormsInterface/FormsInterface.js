@@ -6,12 +6,16 @@ class FormsInterface extends Component{
         formUnits: []
     }
 
+    createUniqueId = () => {
+        return Math.random().toString(36).substr(2, 16);
+    }
+
     createForm = () => {
         let tempState = {...this.state};
         tempState.formUnits.push(
             {
                 type: "input",
-                id: Math.random().toString(36).substr(2, 16),
+                id: this.createUniqueId(),
                 name: "",
                 desc: "",
                 dateI: "",
@@ -19,14 +23,19 @@ class FormsInterface extends Component{
                 loc: ""
             }
         );
-        this.setState({...tempState});
+        this.setState({
+            ...tempState
+        });
     }
 
     removeForm = (formId) => {
         let tempState = {...this.state};
-        let index = tempState.formUnits.map((current)=>(current.id)).indexOf(formId);
+        let arrayOfForms = tempState.formUnits.map((current)=>(current.id));
+        let index = arrayOfForms.indexOf(formId);
         tempState.formUnits.splice(index, 1);
-        this.setState({...tempState});    
+        this.setState({
+            ...tempState
+        });    
     }
 
     updateForm = (formField, formId, e) => {
@@ -39,21 +48,14 @@ class FormsInterface extends Component{
         });
     }
 
-    changeType = (formId) => {
-        let tempState = {...this.state};
-        let index = tempState.formUnits.map((current)=>(current.id)).indexOf(formId);
-        tempState.formUnits[index].type = (tempState.formUnits[index].type == "display") ? "input" : "display";
-        this.setState({...tempState}); 
-    }
 
     render(){
         let formUnits = this.state.formUnits.map((current)=>{
-            return <FormUnit data={current} key={current.id} delete={this.removeForm} update={this.updateForm} change={this.changeType}/>
+            return <FormUnit data={current} key={current.id} delete={this.removeForm} update={this.updateForm}/>
         });
         return(
             <div>
                 <h2>I'm a FormsInterface!</h2>
-                <h3>Feel free to create and change your events!</h3> 
                 <button onClick={this.createForm}>Create New Form</button>
                 {formUnits}
             </div>

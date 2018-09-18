@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
-import HelloUser from './Components/HelloUser/HelloUser';
+import FormsInterface from './Components/FormsInterface/FormsInterface';
 
 class App extends Component {
-
   render() {
     return (
       <div>
-
-        <p>Hello World!</p>
-        <HelloUser name="Gabriel Suassuna"/>
+        <h1>Hello World</h1>
+        <FormsInterface />
       </div>
     );
   }
-
 }
 
 export default App;
-
